@@ -1,20 +1,13 @@
 box: wercker/nodejs
-# Build definition
 build:
-  # The steps that will be executed on build
-  steps:
-    # A step that executes `npm install` command
-    - npm install
-    - ./node_modules/.bin/webdriver-manager update
-    # A step that executes `npm test` command
-    - grunt test
+    steps:
+        - npm install
+        - ./node_modules/.bin/webdriver-manager update
+        - grunt test
 deploy:
-
-  # The steps that will be executed on build
-  steps:
-    - script:
-        name: deploy to divshot.io
-        code: |
-          npm install -g divshot-cli 
-          divshot push $WERCKER_DEPLOYTARGET_NAME --token $DIVSHOT_TOKEN
-
+    steps:
+        - script:
+            name: deploy to divshot.io
+            code: |
+                npm install -g divshot-cli 
+                divshot push $WERCKER_DEPLOYTARGET_NAME --token $DIVSHOT_TOKEN

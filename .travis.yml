@@ -11,10 +11,9 @@ before_script:
   - bower install
   - ./node_modules/.bin/webdriver-manager update  
 script:
-  - grunt test
-  - grunt server > /dev/null &
-  - ./node_modules/.bin/protractor protractor.conf.js
   - grunt build
+  - grunt test
+  - grunt test-e2e
 deploy:
   provider: divshot
   environment:

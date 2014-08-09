@@ -40,7 +40,8 @@
     "grunt-gh-pages": "~0.9.0",
     "underscore.string": "~2.3.3",
     "grunt-manifest": "~0.4.0",
-    "phantomjs": "^1.9.7-15"
+    "phantomjs": "^1.9.7-15",
+    "grunt-http-server": "0.0.5"
   },
   "engines": {
     "node": ">=0.10.0"

@@ -9,10 +9,10 @@ node_js:
 before_script:
   - npm install -g bower grunt-cli karma
   - bower install
-  - grunt server > /dev/null &
   - ./node_modules/.bin/webdriver-manager update  
 script:
   - grunt test
+  - grunt server > /dev/null &
   - ./node_modules/.bin/protractor protractor.conf.js
   - grunt build
 deploy:

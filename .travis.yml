@@ -1,0 +1,24 @@
+language: node_js
+before_install:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - gem install sass
+  - gem install compass
+node_js:
+  - '0.10'
+before_script:
+  - npm install -g bower grunt-cli karma
+  - bower install
+  - ./node_modules/.bin/webdriver-manager update  
+script:
+  - grunt test
+  - grunt build
+deploy:
+  provider: divshot
+  environment:
+    master: development
+    staging: staging
+    production: production
+    skip_cleanup: true
+  api_key:
+    secure: g3HHIF+vnoN/GwD9RtADUJnnbwWKpck+ixyOBHEA3wbjkMJo4XySuwhx2MhnVV4+CNvumfAcmVORXiNLOCoKVcCHizzNqh2Jx1HeMn+0Hv5rgOM1RrDopDig74v3ySYMBGKd3VVE1+JX7APuib50Tywvv7VTfrAJvMlODjNKxBE=

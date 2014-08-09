@@ -18,6 +18,6 @@ deploy:
     master: development
     staging: staging
     production: production
-    skip_cleanup: true
+  skip_cleanup: true
   api_key:
     secure: g3HHIF+vnoN/GwD9RtADUJnnbwWKpck+ixyOBHEA3wbjkMJo4XySuwhx2MhnVV4+CNvumfAcmVORXiNLOCoKVcCHizzNqh2Jx1HeMn+0Hv5rgOM1RrDopDig74v3ySYMBGKd3VVE1+JX7APuib50Tywvv7VTfrAJvMlODjNKxBE=

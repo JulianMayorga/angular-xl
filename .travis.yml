@@ -11,7 +11,10 @@ before_script:
   - bower install
   - ./node_modules/.bin/webdriver-manager update  
 script:
-  - grunt build
+  - grunt test-e2e
+  - grunt test
+after_success:
+  - grunt build 
 deploy:
   provider: divshot
   environment:
